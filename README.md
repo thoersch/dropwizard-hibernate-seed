@@ -1,4 +1,4 @@
-#To use
+###RESTful api seed project using Dropwizard and hibernate
 
 Build
 ```

@@ -48,7 +48,7 @@ public class ContactResource {
     @UnitOfWork
     @Path("/{id}")
     public Response updateContact(@Valid Contact contact) {
-        dao.updateContact(contact.getId(),contact.getFirstName(), contact.getLastName(), contact.getPhone());
+        dao.updateContact(contact);
         return Response.ok(new Contact(contact.getId(), contact.getFirstName(), contact.getLastName(), contact.getPhone())).build();
     }
 }

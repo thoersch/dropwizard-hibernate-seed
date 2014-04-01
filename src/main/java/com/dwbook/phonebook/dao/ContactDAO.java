@@ -19,12 +19,11 @@ public class ContactDAO extends AbstractDAO<Contact> {
         return persist(contact).getId();
     }
 
-    public void updateContact(@Bind("id") int id, @Bind("firstName") String firstName, @Bind("lastName") String lastName, @Bind("phone") String phone) {
-        Contact contact = new Contact(id, firstName, lastName, phone);
+    public void updateContact(Contact contact) {
         persist(contact);
     }
 
     public void deleteContact(@Bind("id") int id) {
-        deleteContact(id);
+        currentSession().delete(get(id));
     }
 }

@@ -86,6 +86,11 @@
           <artifactId>postgresql</artifactId>
           <version>9.3-1101-jdbc41</version>
       </dependency>
+      <dependency>
+          <groupId>com.google.inject</groupId>
+          <artifactId>guice</artifactId>
+          <version>3.0</version>
+      </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
