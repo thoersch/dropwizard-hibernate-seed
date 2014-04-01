@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="1" author="thoersch">
+        <createTable tableName="contact" schemaName="public">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="firstname" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lastname" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="phone" type="varchar(30)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="thoersch">
+        <insert tableName="contact" schemaName="public">
+            <column name="firstname" type="varchar(255)" value="John"/>
+            <column name="lastname" type="varchar(255)" value="Doe" />
+            <column name="phone" type="varchar(30)" value="+123456789" />
+        </insert>
+
+        <insert tableName="contact" schemaName="public">
+            <column name="firstname" type="varchar(255)" value="Jane" />
+            <column name="lastname" type="varchar(255)" value="Doe" />
+            <column name="phone" type="varchar(30)" value="+987654321" />
+        </insert>
+    </changeSet>
+</databaseChangeLog>
